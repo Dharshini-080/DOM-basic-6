@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three</title>
+</head>
+<body>
+    <h2 style="color: green;">Select the country name to find its capital</h2>
+    
+    Select country:<select id="countryselect" onchange="displayCapital()">
+        <option value="India">India</option>
+        <option value="Australia">Australia</option>
+        <option value="UK">UK</option>
+        <option value="America">America</option>
+        <option value="Germany">Germany</option>
+    </select>
+   <p > Capital: <input type="text" id="capitaldisplay"></p>
+    <script>
+        function displayCapital()
+        {
+            var countrySelect = document.getElementById("countryselect");
+            var capitalDisplay = document.getElementById("capitaldisplay");
+
+      var selectedCountry = countrySelect.options[countrySelect.selectedIndex].value;
+
+      var countryCapitals = {
+        "India": "New Delhi",
+        "Australia": "Canberra",
+        "UK": "London",
+        "America": "Washington, D.C.",
+        "Germany": "Berlin"
+      };
+
+      capitalDisplay.value= countryCapitals[selectedCountry];
+      capitalDisplay.style.color = "brown";
+      capitalDisplay.style.fontWeight = "bold";
+      capitalDisplay.style.fontSize = "20px";
+        }
+    </script>
+</body>
+</html>
